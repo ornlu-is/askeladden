@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-askeladden-dev
+  labels:
+    env: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: askeladden
+  template:
+    metadata:
+      labels:
+        app: askeladden
+    spec:
+      containers:
+      - name: askeladden
+        image: localhost:32000/askeladden:registry
