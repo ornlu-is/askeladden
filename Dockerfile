@@ -1,8 +1,11 @@
-FROM golang:1.19
+FROM golang:1.19 AS builder
 
 ADD . /askeladden
 WORKDIR /askeladden
 
 RUN go build
 
-ENTRYPOINT ./askeladden
+FROM debian:bookworm-slim
+COPY --from=builder /askeladden/askeladden /usr/bin/askeladden
+
+ENTRYPOINT ./usr/bin/askeladden

@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
       - name: askeladden
-        image: localhost:32000/askeladden:registry
+        image: localhost:32000/askeladden:slim
