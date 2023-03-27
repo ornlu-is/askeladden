@@ -1,0 +1,18 @@
+replicaCount: 1
+
+image: localhost:32000/askeladden:slim
+
+labels:
+  app: askeladden
+
+selectorLabels:
+  app: askeladden
+
+deploymentLabels:
+  env: dev
+
+service:
+  type: NodePort
+  port: 80
+  targetPort: 8090
+  nodePort: 30008
