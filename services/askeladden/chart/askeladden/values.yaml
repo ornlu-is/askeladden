@@ -9,10 +9,10 @@ selectorLabels:
   app: askeladden
 
 deploymentLabels:
-  env: dev
+  env: staging
 
 service:
   type: NodePort
   port: 80
   targetPort: 8090
-  nodePort: 30008
+  nodePort: 30009
